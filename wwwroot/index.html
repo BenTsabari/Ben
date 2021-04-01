@@ -1,0 +1,1714 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        th {
+            position: sticky;
+            top: 0;
+            text-decoration-line: underline;
+        }
+
+        body {
+            background-color: gray;
+        }
+
+        #btnSave {
+            display: block;
+        }
+
+        #btnDelete {
+            display: block;
+        }
+
+        #loginContainer {
+            position: absolute;
+            background-color: #b4e1e2;
+            left: 38%;
+            top: 100px;
+            border: 2px solid;
+            border-radius: 6px;
+            padding: 6px;
+            height: inherit;
+            width: 23%;
+            overflow: auto;
+            text-align: center;
+            zoom: 1.5;
+            display: block;
+            background-image: url("OpenBook5.png");
+            background-repeat: no-repeat;
+        }
+
+        #loginBtn {
+            margin-top: 3px;
+        }
+
+        #suBtn {
+            margin-top: 3px;
+            margin-left: 135px;
+            display: none;
+            position: absolute;
+        }
+
+
+
+        .CloseBtnClass {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .button {
+            padding: 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-width: 3px;
+            border-bottom-color: black;
+            text-emphasis-position: unset;
+            height: 10px;
+            text-align: center;
+        }
+
+        #BtnContainer {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        #moveright {
+            width: 50px;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+        }
+
+        #moveleft {
+            width: 50px;
+            left: 0;
+            bottom: 0;
+            position: absolute;
+        }
+
+        #divCount {
+            bottom: 0;
+            position: absolute;
+            margin-left: 250px;
+        }
+
+        #divSearch {
+            width: 1291px;
+            height: 35px;
+            border: 3px solid;
+            border-color: black;
+            background-color: palevioletred;
+            margin-left: 15px;
+            display: none;
+        }
+
+        #divSU {
+            float: left;
+            padding: 5px;
+            margin-bottom: 5px;
+            margin-top: 1px;
+            margin-left: 15px;
+            position: relative;
+            width: 620px;
+            height: 540px;
+            border: 3px solid;
+            border-color: transparent;
+            background-color: transparent;
+            margin-left: 15px;
+            display: block;
+        }
+
+        #divSUHelp {
+            float: right;
+            padding: 5px;
+            margin-bottom: 5px;
+            margin-top: 1px;
+            margin-left: 10px;
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 3px solid;
+            border-color: transparent;
+            background-color: transparent;
+            display: none;
+        }
+
+        #divHelpUC {
+            float: right;
+            padding: 5px;
+            margin-bottom: 5px;
+            margin-top: 1px;
+            margin-left: 10px;
+            position: relative;
+            width: 200px;
+            height: 10px;
+            border-color: transparent;
+            background-color: transparent;
+        }
+
+        #btnUserControl {
+            width: 100px;
+            height: 20px;
+            margin-left: 100px;
+        }
+
+        #searchbook {
+            margin-bottom: 10px;
+        }
+
+        #btnSearch {
+            width: 50px;
+            height: 15px;
+        }
+
+
+
+        #container1 {
+            text-align: center;
+            background-color: white;
+            background-image: url("OldShelf2.png");
+            background-repeat: no-repeat;
+            color: blue;
+            border: 3px solid;
+            border-color: black;
+            width: 620px;
+            float: left;
+            height: 540px;
+            padding: 5px;
+            margin-bottom: 5px;
+            margin-top: 1px;
+            margin-left: 15px;
+            position: relative;
+            display: none;
+        }
+
+
+
+        #container2 {
+            text-align: center;
+            background-color: mediumspringgreen;
+            color: blue;
+            border: 3px solid;
+            border-color: black;
+            width: 169px;
+            float: left;
+            height: 540px;
+            padding: 5px;
+            margin-bottom: 5px;
+            margin-top: 1px;
+            margin-left: 15px;
+            position: relative;
+            overflow-y: scroll;
+            resize: vertical;
+        }
+
+
+        #container3 {
+            text-align: center;
+            background-color: mediumspringgreen;
+            color: blue;
+            border: 3px solid;
+            border-color: black;
+            width: 430px;
+            float: left;
+            height: 264px;
+            padding: 5px;
+            margin-bottom: 5px;
+            margin-top: 1px;
+            margin-left: 15px;
+            position: relative;
+            overflow-y: scroll;
+            resize: vertical;
+        }
+
+        #container4 {
+            text-align: center;
+            background-color: mediumspringgreen;
+            color: blue;
+            border: 3px solid;
+            border-color: black;
+            width: 169px;
+            float: left;
+            height: 264px;
+            padding: 5px;
+            margin-bottom: 5px;
+            margin-top: 1px;
+            margin-left: 15px;
+            overflow-y: scroll;
+            position: relative;
+        }
+
+        #container5 {
+            text-align: center;
+            background-color: mediumspringgreen;
+            color: blue;
+            border: 3px solid;
+            border-color: black;
+            width: 630px;
+            float: left;
+            height: 540px;
+            padding: 5px;
+            margin-bottom: 5px;
+            margin-top: 1px;
+            margin-left: 15px;
+            position: relative;
+            overflow-y: scroll;
+            resize: vertical;
+            display: none;
+        }
+
+
+        #bookinfotable table {
+            border: 1px solid gray;
+        }
+
+        #bookinfotable th {
+            border: 1px solid gray;
+            background-color: darkcyan;
+            color: white;
+        }
+
+        #bookinfotable td {
+            border: 1px solid gray;
+        }
+
+        #bookinfotable tr:nth-child(2n+1) {
+            background-color: aqua;
+        }
+
+        #bookinfotable tr:nth-child(2n) {
+            background-color: aquamarine;
+        }
+
+        #bookinfotable tr:hover {
+            color: red;
+        }
+
+        #supplierinfotable table {
+            border: 1px solid gray;
+        }
+
+        #supplierinfotable tr:hover {
+            color: red;
+        }
+
+        #supplierinfotable th {
+            border: 1px solid gray;
+            background-color: darkcyan;
+            color: white;
+        }
+
+        #supplierinfotable td {
+            border: 1px solid gray;
+        }
+
+        #supplierinfotable tr:nth-child(2n+1) {
+            background-color: aqua;
+        }
+
+        #supplierinfotable tr:nth-child(2n) {
+            background-color: aquamarine;
+        }
+
+
+        #usersinfotable table {
+            border: 1px solid gray;
+        }
+
+        #usersinfotable tr:hover {
+            color: red;
+        }
+
+        #usersinfotable th {
+            border: 1px solid gray;
+            background-color: darkcyan;
+            color: white;
+        }
+
+        #usersinfotable td {
+            border: 1px solid gray;
+        }
+
+        #usersinfotable tr:nth-child(2n+1) {
+            background-color: aqua;
+        }
+
+        #usersinfotable tr:nth-child(2n) {
+            background-color: aquamarine;
+        }
+
+        #categoriesinfotable table {
+            border: 1px solid gray;
+        }
+
+        #categoriesinfotable tr:hover {
+            color: red;
+        }
+
+        #categoriesinfotable th {
+            text-decoration-line: underline;
+            border: 1px solid gray;
+            background-color: darkcyan;
+            color: white;
+        }
+
+        #categoriesinfotable td {
+            border: 1px solid gray;
+        }
+
+        #categoriesinfotable tr:nth-child(2n+1) {
+            background-color: aqua;
+        }
+
+        #categoriesinfotable tr:nth-child(2n) {
+            background-color: aquamarine;
+        }
+
+        #shelftable table {
+            position: absolute;
+            table-layout: fixed;
+        }
+
+
+        #shelftable td {
+            border-color: red;
+            height: 115px;
+            width: 100px;
+        }
+
+            #shelftable td:hover {
+                transform: scale(1.5);
+            }
+
+
+
+        .EditScreen {
+            border: 1px solid gray;
+            left: 30%;
+            right: 30%;
+            top: 100px;
+            bottom: 25px;
+            background-color: red;
+            position: absolute;
+            background-image: url("OldPage2.jpg");
+            background-repeat: no-repeat;
+        }
+
+        .View {
+            margin: 35px 10px 10px 10px;
+            position: absolute;
+            left: 5px;
+            right: 5px;
+            top: 10px;
+            bottom: 5px;
+        }
+
+        .Prompt {
+            margin: 35px 10px 10px 10px;
+            position: absolute;
+            left: 40%;
+            right: 40%;
+            top: 120px;
+            bottom: 35px;
+        }
+
+        select {
+            max-width: 140px;
+        }
+
+        button {
+            margin: 5px;
+        }
+    </style>
+    <script>
+
+        class View {
+            constructor(container) {
+                let div = document.createElement('div');
+                div.className = 'EditScreen';
+                this.container = container;
+                this.div = div;
+                let closeButton = document.createElement('img');
+                closeButton.src = 'close.png';
+                closeButton.style.float = 'right';
+                this.div.appendChild(closeButton);
+                closeButton.onclick = this.hide.bind(this);
+                this.inner = document.createElement('div');
+                this.inner.className = 'View';
+                this.outer = div;
+                this.div.appendChild(this.inner);
+
+
+            }
+
+            show() {
+                this.container.appendChild(this.div);
+            }
+
+            hide() {
+                this.container.removeChild(this.div);
+            }
+        }
+
+        class PromptView extends View {
+            constructor(container, message, buttonText, whatToDo) {
+                super(container);
+                let p = document.createElement('p');
+                p.innerHTML = message;
+                this.inner.appendChild(p);
+                this.outer.classList.add('Prompt');
+                let btn = document.createElement('button');
+                btn.innerHTML = buttonText;
+                btn.onclick = whatToDo;
+
+                this.inner.appendChild(btn);
+                this.show();
+            }
+        }
+
+        class EditView extends View {
+            constructor(container, columns, onUpdate, onDelete) {
+                super(container);
+                this.columns = columns;
+                this.inputElements = {};
+                this.onUpdate = onUpdate;
+                this.onDelete = onDelete;
+                this.container = container;
+                for (let i = 0; i < columns.length; i++) {
+                    let p = document.createElement('p');
+                    let label = document.createElement('label');
+                    label.style.width = '90px';
+                    label.style.display = 'inline-block';
+                    label.innerHTML = columns[i].title;
+                    let input;
+                    if (columns[i].type == 'foreignKey') {
+                        input = document.createElement('select');
+                    } else {
+                        input = document.createElement('input');
+
+                        switch (columns[i].type) {
+                            case 'number':
+                                input.type = 'number';
+                                break;
+                            case 'text':
+                                input.type = 'text';
+                                break;
+                            case 'boolean':
+                                input.type = 'checkbox';
+                                break;
+                        }
+                        if (columns[i].primaryKey) {
+                            input.disabled = true;
+                        }
+
+                    }
+                    this.inputElements[columns[i].name] = input;
+                    p.appendChild(label);
+                    p.appendChild(input);
+                    this.inner.appendChild(p);
+                }
+
+                btnSave = document.createElement('button');
+
+                btnSave.innerHTML = 'save';
+                btnSave.onclick = this.save.bind(this);
+                this.inner.appendChild(btnSave);
+
+                btnDelete = document.createElement('button');
+
+
+
+                btnDelete.innerHTML = 'delete';
+                btnDelete.onclick = this.delete.bind(this);
+                this.inner.appendChild(btnDelete);
+                this.btnDelete = btnDelete;
+
+
+
+                this.inner.style.overflowY = 'scroll';
+                this.isEdit = null;
+
+            }
+            delete(ev) {
+                if (!this.onDelete)
+                    return;
+                let prompt = new PromptView(this.container, "are you sure you want to delete", "Yes I am", () => {
+                    let obj = ev.target.obj;
+                    let primaryKeyColumn = ev.target.primaryKeyColumn;
+                    let idToDelete = obj[primaryKeyColumn.name];
+                    ev.target.prompt.hide();
+                    ev.target.viewToClose.hide();
+                    this.onDelete(idToDelete);
+                    setCategories();
+                    setSuppliers();
+
+
+                });
+                ev.target.prompt = prompt;
+                ev.target.viewToClose = this;
+
+            }
+            save() {
+
+                let obj = {};
+                for (let i = 0; i < this.columns.length; i++) {
+                    let column = this.columns[i];
+                    let input = this.inputElements[column.name];
+
+                    let newValue;
+                    if (column.type == 'foreignKey') {
+                        newValue = parseInt(input.value);
+                    } else {
+                        switch (column.type) {
+                            case 'number':
+                                newValue = 0;
+                                if (input.value.length > 0)
+                                    newValue = parseInt(input.value);
+
+                                break;
+                            case 'text':
+                                newValue = null;
+                                if (input.value.length > 0)
+                                    newValue = input.value;
+                                break;
+                            case 'boolean':
+                                newValue = input.checked;
+                                break;
+                        }
+
+                    }
+
+                    
+
+                    obj[column.name] = newValue;
+
+
+                }
+
+                     {
+                    this.onUpdate(obj, this.isEdit);
+                }
+
+
+                this.hide();
+
+            }
+
+            show(obj) {
+                super.show();
+                this.isEdit = obj ? true : false;
+                this.btnDelete.disabled = !this.isEdit;
+                this.btnDelete.obj = obj;
+                // חוסם את היכול למחוק ולהוסיף אם אני לא אדמין
+                if (adminConfirmation == false) {
+                    btnSave.disabled = true;
+                    btnDelete.disabled = true;
+                }
+                // פותח את השמירה ומחיקה בעת רישום
+                if (adminConfirmation == false && checkUserresult == false) {
+                    btnSave.disabled = false;
+                }
+                for (let i = 0; i < this.columns.length; i++) {
+                    let column = this.columns[i];
+                    let f = obj && obj.hasOwnProperty(column.name) && obj[column.name] != null;
+                    if (column.primaryKey)
+                        this.btnDelete.primaryKeyColumn = column;
+                    switch (column.type) {
+                        case 'number':
+                            this.inputElements[column.name].value = f ? obj[column.name].toString() : "0";
+                            break;
+                        case 'text':
+                            this.inputElements[column.name].value = f ? obj[column.name] : "";
+                            break;
+                        case 'boolean':
+                            this.inputElements[column.name].checked = f ? obj[column.name] : false;
+                            break;
+                        case "foreignKey":
+                            let input = this.inputElements[column.name];
+                            removeAllChildNodes(input);
+                            let dataSource = column.dataSource;
+                            for (let j = 0; j < dataSource.length; j++) {
+                                let option = document.createElement('option');
+                                option.value = dataSource[j][column.name];
+                                option.selected = f ? obj[column.name] === dataSource[j][column.name] : false;
+                                option.innerHTML = dataSource[j][column.contentFrom];
+                                input.appendChild(option);
+                            }
+                            break;
+                    }
+                }
+            }
+
+        }
+
+       
+
+
+
+
+        let btnSave;
+        let btnDelete;
+        let LShelf;
+        let locationrst;
+        let adminConfirmation;
+        let btnAddRT;
+        let btnAddSupplierRT;
+        let btnAddCategoryRT;
+        let ddCategory, ddSuplier, divUsers, divProducts, divLibrary, divShelf, shelftabletest, divCount, divSuppliers, divCategories, divSearch;
+        let LoginContainer;
+        let divSU;
+        let divHelpUC;
+        let categories = [];
+        let suppliers = [];
+        let openedusers = [];
+        let divContainer;
+        let view;
+        let ShelfNo;
+        let ShelfCount;
+        let suBtn;
+        let btnUserControl;
+        let btn1;
+        let btn2;
+        let btn3;
+        let btn4;
+        let btn5;
+        let btn6;
+        let btn7;
+        let btnSearch;
+        let viewsupplier;
+        let viewcategories;
+        let viewusers;
+        let btnShelf;
+        let divSUHelp;
+        let container1;
+        let container2;
+        let container3;
+        let container4;
+        let container5;
+        let containerShelf;
+        let txtBook;
+        let bookname;
+        let newLocation;
+        let checkUserresult;
+        let usernameInputTXT;
+        let passwordInputTXT;
+        let arrBooksNo = [];
+        let productsColumns = [
+            { name: 'bookID', title: 'Book ID', type: 'number', primaryKey: true },
+            { name: 'bookName', title: 'Book Name', type: 'text' },
+            { name: 'supplierID', title: 'Supplier', type: 'foreignKey', displayColumn: 'supplierName', dataSource: suppliers, contentFrom: "companyName" },
+            { name: 'bookAuthor', title: 'Book Author', type: 'text' },
+            { name: 'bookPrintedYear', title: 'Book Printed Year', type: 'number' },
+            { name: 'bookShelfLoction', title: 'Book Loction On Shelf', type: 'number' },
+            { name: 'bookBinding', title: 'Book Binding', type: 'boolean' },
+            { name: 'categoryID', title: 'Category', type: 'foreignKey', displayColumn: 'categoryName', dataSource: categories, contentFrom: 'categoryName' }
+        ];
+        let suppliersColumns = [
+            { name: 'supplierID', title: 'ID', type: 'number', primaryKey: true },
+            { name: 'companyName', title: 'Company Name', type: 'text' },
+            { name: 'contactName', title: 'Contact Name', type: 'text' },
+            { name: 'contactTitle', title: 'Contact Title', type: 'text' },
+            { name: 'address', title: 'Address', type: 'text' },
+            { name: 'city', title: 'City', type: 'text' },
+        ];
+        let categoriesColumns = [
+            { name: 'categoryID', title: 'ID', type: 'number', primaryKey: true },
+            { name: 'categoryName', title: 'Category Name', type: 'text' },
+        ];
+        let usersColumns = [
+            { name: 'userID', title: 'ID', type: 'number', primaryKey: true },
+            { name: 'userName', title: 'User Name', type: 'text' },
+            { name: 'password', title: 'Password', type: 'text' },
+        ];
+        function init() {
+
+            btnAddRT = document.getElementById('btnAddRT');
+            btnAddRT = document.createElement('button');
+            btnAddRT.innerHTML = 'Add Book';
+            btnAddRT.onclick = () => { view.show(null); };
+
+            btnAddSupplierRT = document.getElementById('btnAddSupplierRT');
+            btnAddSupplierRT = document.createElement('button');
+            btnAddSupplierRT.innerHTML = 'Supplier Adding';
+            btnAddSupplierRT.onclick = () => {
+                showHidec2c3c5(container2, container3, container5, container4);
+            };
+
+            btnAddCategoryRT = document.getElementById('btnAddCategoryRT');
+            btnAddCategoryRT = document.createElement('button');
+            btnAddCategoryRT.innerHTML = 'Category Adding';
+            btnAddCategoryRT.onclick = () => {
+                showHidec2c4c5(container2, container4, container5, container3);
+            };
+
+            locationrst = document.getElementById('locationrst');
+            locationrst = false;
+
+            adminConfirmation = document.getElementById('adminConfirmation');
+            adminConfirmation = false;
+            LShelf = document.getElementById('LShelf');
+            divSUHelp = document.getElementById('divSUHelp');
+            newLocation = document.getElementById('newLocation');
+            usernameInputTXT = document.getElementById('usernameInputTXT');
+            passwordInputTXT = document.getElementById('passwordInputTXT');
+            txtBook = document.getElementById('txtBook');
+            bookname = document.getElementById('bookname');
+            ShelfNo = document.getElementById('ShelfNo');
+            ShelfNo = 0;
+            ShelfCount = document.getElementById('ShelfCount');
+            ShelfCount = 1;
+            document.getElementById("SC").innerHTML = "Shelf Number" + " " + ShelfCount;
+
+
+
+            btnUserControl = document.getElementById('btnUserControl');
+            btnSave = document.getElementById('btnSave');
+            btnDelete = document.getElementById('btnDelete');
+            checkUserresult = document.getElementById('checkUserresult');
+            checkUserresult = false;
+            suBtn = document.getElementById('suBtn');
+            suBtn.innerHTML = "Sign Up";
+            suBtn.onclick = () => { viewusers.show(null); };
+            btn1 = document.getElementById('btn1');
+            btn2 = document.getElementById('btn2');
+            btn3 = document.getElementById('btn3');
+            btn4 = document.getElementById('btn4');
+            btn5 = document.getElementById('btn5');
+            btn6 = document.getElementById('btn6');
+            btn7 = document.getElementById('btn7');
+            btnSearch = document.getElementById('btnSearch');
+            btnSearch = document.createElement('button');
+            btnShelf = document.getElementById('btnShelf');
+            viewsupplier = document.getElementById('viewsupplier');
+            viewcategories = document.getElementById('viewcategories');
+            viewusers = document.getElementById('viewusers');
+            divSU = document.getElementById('divSU');
+            divHelpUC = document.getElementById('divHelpUC');
+            container1 = document.getElementById('container1');
+            container2 = document.getElementById('container2');
+            container3 = document.getElementById('container3');
+            container4 = document.getElementById('container4');
+            container5 = document.getElementById('container5');
+            containerShelf = document.getElementById('containerShelf');
+            LoginContainer = document.getElementById('LoginContainer');
+            divUsers = document.getElementById('divUsers');
+            divSearch = document.getElementById('divSearch');
+            divCount = document.getElementById('divCount');
+            divSuppliers = document.getElementById('divSuppliers');
+            divCategories = document.getElementById('divCategories');
+            divContainer = document.getElementById('divContainer');
+            ddCategory = document.getElementById('ddCategory');
+            ddSuplier = document.getElementById('ddSuplier');
+            divProducts = document.getElementById('divProducts');
+            divLibrary = document.getElementById('divLibrary');
+            divShelf = document.getElementById('divShelf');
+            shelftabletest = document.getElementById('shelftabletest');
+            info = document.getElementById('info');
+            arrBooksNo = document.getElementById('arrBooksNo');
+            let optionPleaseWait = document.createElement('option');
+            optionPleaseWait.innerHTML = 'please wait..';
+            ddCategory.appendChild(optionPleaseWait);
+            setCategories();
+           
+            // למוצרים
+            view = new EditView(container1, productsColumns, (obj, isEdit) => {
+                let currentBook = obj;
+
+                if (currentBook.bookShelfLoction == 0) {
+                    alert("location not allowed");
+                    view.show(currentBook);
+                    return;
+                }
+
+                sendHttpRequest('api/products/' + (isEdit ? 'update' : 'insert'), (success, response) => {
+                    if (response == 'true') {
+                        loadProducts();
+                    }
+                    else {
+                        alert("Book locaiton Has been taken.");
+                        view.show(currentBook);
+                    }
+                }, obj);
+
+            }, (idToDelete) => {
+                sendHttpRequest('api/products/delete?id=' + idToDelete, (success, response) => {
+                    if (success && response == 'true') {
+                        loadProducts();
+                    }
+                });
+            });
+
+            setSuppliers();
+          
+            // לספקים
+            viewsupplier = new EditView(container1, suppliersColumns, (obj, isEdit) => {
+                sendHttpRequest('api/suppliers/' + (isEdit ? 'update' : 'insert'), (success, response) => {
+                    if (response == 'true') {
+                        loadSuppliers();
+                        setCategories();
+                        setSuppliers();
+
+                    }
+                }, obj);
+
+            }, (idToDelete) => {
+                sendHttpRequest('api/suppliers/delete?id=' + idToDelete, (success, response) => {
+                    if (success && response == 'true') {
+                        loadSuppliers();
+                        setCategories();
+                        setSuppliers();
+
+                    }
+                });
+            });
+
+
+            // לקטגוריות
+            viewcategories = new EditView(container1, categoriesColumns, (obj, isEdit) => {
+                sendHttpRequest('api/categories/' + (isEdit ? 'update' : 'insert'), (success, response) => {
+                    if (response == 'true') {
+                        loadCategories();
+                        setCategories();
+                        setSuppliers();
+                    }
+                }, obj);
+
+            }, (idToDelete) => {
+                sendHttpRequest('api/categories/delete?id=' + idToDelete, (success, response) => {
+                    if (success && response == 'true') {
+                        loadCategories();
+                        setCategories();
+                        setSuppliers();
+                    }
+                });
+            });
+
+
+
+
+            sendHttpRequest("api/users/pull", (success, response) => {
+                if (success) {
+                    let pulledUsers = JSON.parse(response);
+                    for (let i = 0; i < pulledUsers.length; i++)
+                        openedusers.push(pulledUsers[i]);
+                }
+                loadUsers();
+
+            });
+            // ליוזרים
+            viewusers = new EditView(divSU, usersColumns, (obj, isEdit) => {
+
+                sendHttpRequest('api/users/' + (isEdit ? 'update' : 'insert'), (success, response) => {
+                    if (response == 'true') {
+                        loadUsers();
+                    }
+                    else {
+                        alert("Register Error,User Exist");
+                        viewusers.show(null);
+                    }
+                }, obj);
+
+            }, (idToDelete) => {
+                sendHttpRequest('api/users/delete?id=' + idToDelete, (success, response) => {
+                    if (success && response == 'true') {
+                        loadUsers();
+                    }
+                });
+            });
+
+
+
+
+        }
+        // מאפס את מערך הספקים יוצר שאילתה ומכניס שוב מעודכן למערך
+        function setSuppliers() {
+            let S = suppliers.length;
+            for (let i = 0; i < S; i++) {
+                suppliers.pop();
+            }
+            sendHttpRequest('api/suppliers/pull', (success, response) => {
+                if (success) {
+                    let pulledSuppliers = JSON.parse(response);
+                    for (let i = 0; i < pulledSuppliers.length; i++)
+                        suppliers.push(pulledSuppliers[i]);
+                }
+                loadSuppliers();
+
+                // loadSuppliers();
+            });
+        }
+
+        // מאפס את מערך הקטגוריות יוצר שאילתה ומכניס שוב מעודכן למערך
+        function setCategories() {
+            removeAllChildNodes(ddCategory);
+            let L = categories.length;
+            for (let i = 0; i < L; i++) {
+                categories.pop();
+            }
+            sendHttpRequest('api/categories/pull', (success, response) => {
+                if (success) {
+                    let loadedCategories = JSON.parse(response);
+                    for (let i = 0; i < loadedCategories.length; i++) {
+                        categories.push(loadedCategories[i]);
+                    }
+                    for (let i = 0; i < categories.length; i++) {
+                        let optionCategory = document.createElement('option');
+                        optionCategory.innerHTML = categories[i].categoryName;
+                        optionCategory.value = categories[i].categoryId;
+                        ddCategory.appendChild(optionCategory);
+                    }
+                    
+                    loadCategories(); 
+                }
+            });
+        }
+
+        // מעביר נתוני השאילת לפונקציה הטוענת את טבלת היוזרים
+        function loadUsers() {
+            sendHttpRequest("api/users/pull", (success, response) => {
+                if (success) {
+                    let information = JSON.parse(response);
+                    renderUsersTable(usersColumns, divUsers, information);
+                }
+            });
+
+        }
+        // פונקציה שטוענת את טבלת היוזרים
+        function renderUsersTable(columns, container, data) {
+            removeAllChildNodes(container);
+            let tbl = document.createElement('table');
+            tbl.id = "usersinfotable";
+
+            let trHeader = document.createElement('tr');
+            for (let i = 0; i < columns.length; i++) {
+                let th = document.createElement('th');
+                th.innerHTML = columns[i].title;
+                trHeader.appendChild(th);
+            }
+            tbl.appendChild(trHeader);
+
+            for (let i = 0; i < data.length; i++) {
+                let tr = document.createElement('tr');
+                tr.onclick = () => {
+                    viewusers.show(data[i]);
+                };
+                for (let j = 0; j < columns.length; j++) {
+                    let td = document.createElement('td');
+                    let str = "";
+                    switch (columns[j].type) {
+                        case "text":
+                            str = data[i][columns[j].name];
+                            break;
+                        case "number":
+                            str = data[i][columns[j].name];
+                            break;
+                        case "boolean":
+                            str = data[i][columns[j].name] ? '&#10003' : '';
+                            break;
+                        case "foreignKey":
+                            str = data[i][columns[j].displayColumn];
+                            break;
+                    }
+                    td.innerHTML = str;
+                    tr.appendChild(td);
+                }
+                tbl.appendChild(tr);
+            }
+            let trAdd = document.createElement('tr');
+            let tdAdd = document.createElement('td');
+            tdAdd.colSpan = columns.length;
+            let btnAdd = document.createElement('button');
+            btnAdd.innerHTML = 'Add User';
+            btnAdd.onclick = () => { viewusers.show(null); };
+            tdAdd.appendChild(btnAdd);
+            trAdd.appendChild(tdAdd);
+            tbl.appendChild(trAdd);
+            container.appendChild(tbl);
+        }
+
+        // מעביר נתוני השאילת לפונקציה הטוענת את טבלת הספקים
+        function loadSuppliers() {
+            sendHttpRequest('api/suppliers/pull', (success, response) => {
+                if (success) {
+                    let information = JSON.parse(response);
+                    renderSupplierTable(suppliersColumns, divSuppliers, information);
+                }
+            });
+
+        }
+
+        // פונקציה שטוענת את טבלת הספקים
+        function renderSupplierTable(columns, container, data) {
+            removeAllChildNodes(container);
+            let tbl = document.createElement('table');
+            tbl.id = "supplierinfotable";
+
+            let trHeader = document.createElement('tr');
+            for (let i = 0; i < columns.length; i++) {
+                let th = document.createElement('th');
+                th.innerHTML = columns[i].title;
+                trHeader.appendChild(th);
+            }
+            tbl.appendChild(trHeader);
+
+            for (let i = 0; i < data.length; i++) {
+                let tr = document.createElement('tr');
+                tr.onclick = () => {
+                    viewsupplier.show(data[i]);
+                };
+                for (let j = 0; j < columns.length; j++) {
+                    let td = document.createElement('td');
+                    let str = "";
+                    switch (columns[j].type) {
+                        case "text":
+                            str = data[i][columns[j].name];
+                            break;
+                        case "number":
+                            str = data[i][columns[j].name];
+                            break;
+                        case "boolean":
+                            str = data[i][columns[j].name] ? '&#10003' : '';
+                            break;
+                        case "foreignKey":
+                            str = data[i][columns[j].displayColumn];
+                            break;
+                    }
+                    td.innerHTML = str;
+                    tr.appendChild(td);
+                }
+                tbl.appendChild(tr);
+            }
+            let trAdd = document.createElement('tr');
+            let tdAdd = document.createElement('td');
+            tdAdd.colSpan = columns.length;
+            let btnAdd = document.createElement('button');
+            btnAdd.innerHTML = 'Add Supplier';
+            btnAdd.onclick = () => { viewsupplier.show(null); };
+            tdAdd.appendChild(btnAdd);
+            trAdd.appendChild(tdAdd);
+            tbl.appendChild(trAdd);
+            container.appendChild(tbl);
+        }
+
+
+        // מעביר נתוני השאילת לפונקציה הטוענת את טבלת הקטגוריות
+        function loadCategories() {
+            sendHttpRequest('api/categories/pull', (success, response) => {
+                if (success) {
+                    let information = JSON.parse(response);
+                    renderCategoriesTable(categoriesColumns, divCategories, information);
+                    loadProducts();
+                }
+            });
+
+        }
+
+        
+        // פונקציה שטוענת את טבלת הקטגוריות
+        function renderCategoriesTable(columns, container, data) {
+            removeAllChildNodes(container);
+            let tbl = document.createElement('table');
+            tbl.id = "categoriesinfotable";
+
+            let trHeader = document.createElement('tr');
+            for (let i = 0; i < columns.length; i++) {
+                let th = document.createElement('th');
+                th.innerHTML = columns[i].title;
+                trHeader.appendChild(th);
+            }
+            tbl.appendChild(trHeader);
+
+            for (let i = 0; i < data.length; i++) {
+                let tr = document.createElement('tr');
+                tr.onclick = () => {
+                    viewcategories.show(data[i]);
+                };
+                for (let j = 0; j < columns.length; j++) {
+                    let td = document.createElement('td');
+                    let str = "";
+                    switch (columns[j].type) {
+                        case "text":
+                            str = data[i][columns[j].name];
+                            break;
+                        case "number":
+                            str = data[i][columns[j].name];
+                            break;
+                        case "boolean":
+                            str = data[i][columns[j].name] ? '&#10003' : '';
+                            break;
+                        case "foreignKey":
+                            str = data[i][columns[j].displayColumn];
+                            break;
+                    }
+                    td.innerHTML = str;
+                    tr.appendChild(td);
+                }
+                tbl.appendChild(tr);
+            }
+            let trAdd = document.createElement('tr');
+            let tdAdd = document.createElement('td');
+            tdAdd.colSpan = columns.length;
+            let btnAdd = document.createElement('button');
+            btnAdd.innerHTML = 'Add Category';
+            btnAdd.onclick = () => { viewcategories.show(null); };
+            tdAdd.appendChild(btnAdd);
+            trAdd.appendChild(tdAdd);
+            tbl.appendChild(trAdd);
+            container.appendChild(tbl);
+        }
+
+        
+        // משתמש בפונקציה זאת להעלים ולהראות דיבים
+        function showHide(ElementId) {
+            if (ElementId.style.visibility == "hidden") {
+                ElementId.style.visibility = "visible";
+                return;
+            }
+            if (ElementId.style.visibility == "visible") {
+                ElementId.style.visibility = "hidden";
+                return;
+            }
+            if (ElementId.style.display == "none") {
+                ElementId.style.display = "block";
+                return;
+            }
+            if (ElementId.style.display == "block") {
+                ElementId.style.display = "none";
+                return;
+            }
+        }
+        // משתמש בפונקציה זאת להעלים ולהראות דיבים
+        function showHidec2c5(ElementId2, ElementId5) {
+
+            if (ElementId2.style.visibility == "hidden") {
+                ElementId2.style.visibility = "visible";
+                ElementId5.style.width = "430px";
+            }
+            else {
+                ElementId2.style.visibility = "hidden"
+                ElementId5.style.width = "630px";
+            }
+
+            if (ElementId2.style.display == "none") {
+                ElementId2.style.display = "block";
+                return;
+            }
+            if (ElementId2.style.display == "block") {
+                ElementId2.style.display = "none";
+                return;
+            }
+        }
+        // משתמש בפונקציה זאת להעלים ולהראות דיבים
+        function showHidec2c3c5(ElementId2, ElementId3, ElementId5, ElementId4) {
+            if (ElementId3.style.visibility == "hidden") {
+                ElementId3.style.visibility = "visible";
+                ElementId2.style.height = "254px";
+                ElementId5.style.height = "254px";
+                return;
+            }
+            if (ElementId3.style.visibility == "visible") {
+                ElementId3.style.visibility = "hidden"
+                if (ElementId4.style.visibility == "visible") {
+                    ElementId2.style.height = "254px";
+                    ElementId5.style.height = "254px";
+                }
+                else {
+                    ElementId2.style.height = "540px";
+                    ElementId5.style.height = "540px";
+                }
+
+                return;
+            }
+
+            if (ElementId5.style.display == "none") {
+                ElementId5.style.display = "block";
+                return;
+            }
+            if (ElementId5.style.display == "block") {
+                ElementId5.style.display = "none";
+                return;
+            }
+
+        }
+        // משתמש בפונקציה זאת להעלים ולהראות דיבים
+        function showHidec2c4c5(ElementId2, ElementId4, ElementId5, ElementId3) {
+            if (ElementId4.style.visibility == "hidden") {
+                ElementId4.style.visibility = "visible";
+                ElementId2.style.height = "254px";
+                ElementId5.style.height = "254px";
+                return;
+            }
+            if (ElementId4.style.visibility == "visible") {
+                ElementId4.style.visibility = "hidden"
+                if (ElementId3.style.visibility == "visible") {
+                    ElementId2.style.height = "254px";
+                    ElementId5.style.height = "254px";
+                }
+                else {
+                    ElementId2.style.height = "540px";
+                    ElementId5.style.height = "540px";
+                }
+                return;
+            }
+
+            if (ElementId4.style.display == "none") {
+                ElementId4.style.display = "block";
+                return;
+            }
+            if (ElementId4.style.display == "block") {
+                ElementId4.style.display = "none";
+                return;
+            }
+
+        }
+        // מחיקת ילדים
+        function removeAllChildNodes(node) {
+            while (node.firstChild)
+                node.removeChild(node.firstChild);
+        }
+
+        function sendHttpRequest(url, whatToDo, body) {
+            let httpRequest = new XMLHttpRequest();
+            httpRequest.onreadystatechange = function () {
+                if (httpRequest.readyState == 4) {
+                    whatToDo(httpRequest.status == 200, httpRequest.responseText);
+                }
+            };
+            if (body) {
+                httpRequest.open("POST", url, true);
+                httpRequest.setRequestHeader('Content-Type', 'application/json;;charset=UTF-8');
+                httpRequest.send(JSON.stringify(body));
+            } else {
+                httpRequest.open("GET", url, true);
+                httpRequest.send();
+            }
+        }
+
+        // מעביר נתוני השאילת לפונקציה הטוענת את טבלת המוצרים
+        function loadProducts() {
+            let categoryId = categories[ddCategory.selectedIndex].categoryID;
+            sendHttpRequest('api/products/pull?categoryID=' + categoryId, (success, response) => {
+                if (success) {
+                    let information = JSON.parse(response);
+                    renderTable(productsColumns, divProducts, information);
+                    loadBooksOnShelf(4, 18, information, shelftabletest, productsColumns);
+                }
+            });
+
+        }
+
+        // פונקציה שטוענת את טבלת המוצרים
+        function renderTable(columns, container, data) {
+            removeAllChildNodes(container);
+            let tbl = document.createElement('table');
+            tbl.id = "bookinfotable";
+
+            let trHeader = document.createElement('tr');
+            for (let i = 0; i < columns.length; i++) {
+                let th = document.createElement('th');
+                th.innerHTML = columns[i].title;
+
+                trHeader.appendChild(th);
+            }
+            tbl.appendChild(trHeader);
+
+            if (adminConfirmation == false) {
+                let th = document.createElement('th');
+                th.innerHTML = "Order Book";
+                trHeader.appendChild(th);
+                tbl.appendChild(trHeader);
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                let tr = document.createElement('tr');
+                tr.onclick = () => {
+                    view.show(data[i]);
+                };
+                for (let j = 0; j < columns.length; j++) {
+                    let td = document.createElement('td');
+                    let str = "";
+                    switch (columns[j].type) {
+                        case "text":
+                            str = data[i][columns[j].name];
+                            break;
+                        case "number":
+                            str = data[i][columns[j].name];
+                            break;
+                        case "boolean":
+                            str = data[i][columns[j].name] ? '&#10003' : '';
+                            break;
+                        case "foreignKey":
+                            str = data[i][columns[j].displayColumn];
+                            break;
+                    }
+                    td.innerHTML = str;
+                    tr.appendChild(td);
+                }
+                tbl.appendChild(tr);
+
+                if (adminConfirmation == false) {
+                    let td = document.createElement('td');
+                    let btnOrderBook = document.createElement('button');
+                    btnOrderBook.innerHTML = "Order"
+                    td.appendChild(btnOrderBook);
+                    btnOrderBook.onclick = () => { sendEmail(data[i].bookName, data[i].bookAuthor, data[i].bookPrintedYear); };
+                    tr.appendChild(td);
+                    tbl.appendChild(tr);
+
+                }
+
+            }
+
+            if (adminConfirmation == true) {
+                let trAdd = document.createElement('tr');
+                let tdAdd = document.createElement('td');
+                tdAdd.colSpan = columns.length;
+
+                tdAdd.appendChild(btnAddRT);
+                trAdd.appendChild(tdAdd);
+                tbl.appendChild(trAdd);
+
+                tdAdd.appendChild(btnAddSupplierRT);
+                trAdd.appendChild(tdAdd);
+                tbl.appendChild(trAdd);
+
+                tdAdd.appendChild(btnAddCategoryRT);
+                trAdd.appendChild(tdAdd);
+                tbl.appendChild(trAdd);
+
+            }
+
+
+            container.appendChild(tbl);
+        }
+
+
+
+      
+
+        // פונקציה הטוענת את המוצרים במדף הספרים
+        // מופעל דרך הפונקציה הטוענת את טבלת המוצרים
+        function loadBooksOnShelf(R, C, data, container, columns) {
+            removeAllChildNodes(container);
+            let arrBooks = [];
+            arrBooks.length = R * C;
+            arrBooks.id = arrBooks;
+            arrBooksNo = 0;
+            let No;
+            No = ShelfNo + 1;
+            let shelftable = document.createElement('table');
+            shelftable.id = "shelftable";
+            for (let i = 0; i < R; i++) {
+                let tr = document.createElement('tr');
+                for (let j = 0; j < C; j++) {
+                    let td = document.createElement('td');
+                    td.id = arrBooks;
+                    tr.appendChild(td);
+                    data.forEach((book) => {
+
+                        if (book.bookShelfLoction == No) {
+                            let img = document.createElement("img");
+                            img.src = "Book3.png";
+                            img.id = "img";
+                            img.value = book.bookShelfLoction;
+                            img.code = book.bookShelfLoction;
+                            img.style.width = "15px";
+                            img.style.height = "80px";
+                            img.style.border = "1px solid";
+                            img.style.marginTop = "27px";
+                            img.style.marginBottom = "5px";
+                            img.style.marginRight = "5px";
+                            img.style.marginLeft = "5px"
+                            img.style.visibility == "hidden"
+                            td.appendChild(img);
+                            img.onclick = () => {
+                                view.show(book);
+                            };
+                        }
+
+
+                    });
+
+                    No++;
+                    arrBooksNo++;
+
+                }
+                shelftable.appendChild(tr);
+            }
+            removeAllChildNodes(container);
+            container.appendChild(shelftable);
+        }
+        // נותן יכולת להזיז עם החצים את מדפי הספרים
+        function addShelf() {
+            ShelfNo += 72;
+            ShelfCount += 1;
+            document.getElementById("SC").innerHTML = "Shelf Number" + " " + ShelfCount;
+            loadProducts();
+        }
+        // נותן יכולת להזיז עם החצים את מדפי הספרים
+        function removeShelf() {
+            ShelfNo -= 72;
+            if (ShelfNo < 0) {
+                ShelfNo = 0
+            }
+            ShelfCount -= 1;
+            if (ShelfCount < 1) {
+                ShelfCount = 1;
+            }
+            document.getElementById("SC").innerHTML = "Shelf Number" + " " + ShelfCount;
+            loadProducts();
+        }
+
+        // שליחת מייל מטבלת המוצרים עבור יוזרים
+        function sendEmail(BN, BA, BPY) {
+            window.location.href = "mailto:bents2@bezeqint.net?subject=" + "Order book name:" + " " + BN +
+                "&body=I%20want%20to%20order%20the%20book:" + " " + "\n\r" + BN + "\n\r" + "of the Author:" + BA + " " + "\n\r"
+                + "printed in:" + BPY;
+        }
+
+        // פונקציה המפעילה חיפוש ספר
+        // מקבלת את שם הספר מהיוזר
+        // מפעילה שאלית חיפוש ספר
+        // במידה ויש את הספר מחזיר טבלת מוצרים עם הספרים שנמצאו
+        function loadBooksToFind() {
+            txtBook = searchbook.value;
+            if (!(txtBook.length == 0)) {
+                bookname = txtBook;
+                lookForBook(bookname);
+            }
+            else {
+                loadProducts();
+                alert("Please Enter Book to Find");
+            }
+        }
+        // שאילת חיפוש סםר - האם הוא נמצא במסד הנתונים
+        function lookForBook(bookname) {
+            sendHttpRequest('api/products/search?BookName=' + bookname, (success, response) => {
+                if (success) {
+                    let information = JSON.parse(response);
+                    console.log(information);
+
+                    renderTable(productsColumns, divProducts, information);
+                }
+            });
+
+        }
+
+
+        // מאפשר לחיצת אנטר להמשך הלוג אין
+        function LoginContainerEnterDown(event) {
+            if (event.keyCode == 13)
+                Login();
+        }
+
+
+
+
+        // יש אדמין אחד במערכת
+        // בכניסה קודם כל בודקים אם האדמין נכנס
+        // ישפיע על התצוגה בהמשך
+        // אם לא מעביר לאופציית בדיקת יוזרים קיימים
+        function Login() {
+            usernameInputTXT = usernameInput.value;
+            passwordInputTXT = passwordInput.value;
+
+            if (usernameInputTXT.length == 0 || passwordInputTXT.length == 0) {
+                alert("Enter Correct Information");
+                return;
+            }
+
+            sendHttpRequest("api/users/GetLoginUser?userName=" + usernameInputTXT + "&password=" + passwordInputTXT, (success, response) => {
+                if (success) {
+                    let information = JSON.parse(response);
+                    loginCallback(information);
+                }
+            });
+
+
+           
+          
+        }
+
+
+        function loginCallback(loginResponse) {
+
+            if (!loginResponse.IsLoginSuucess) {
+                alert(loginResponse.ErrorMessage);
+                suBtn.style.display = "block";
+                return;
+            }
+
+            if (loginResponse.IsAdmin) {
+                initAdminData();
+            }
+            else {
+                initRegualrUserData();
+            }
+        }
+
+        function initAdminData() {
+            adminConfirmation = true;
+
+            loginContainer.style.display = "none";
+            divSU.style.display = "none";
+            container1.style.display = "block";
+            container5.style.display = "block";
+            divSearch.style.display = "block"
+
+            // האם יש פה כפילות קוד?
+            loadProducts();
+            viewusers = new EditView(container1, usersColumns, (obj, isEdit) => {
+                sendHttpRequest('api/users/' + (isEdit ? 'update' : 'insert'), (success, response) => {
+                    if (response == 'true') {
+                        loadUsers();
+                    }
+                }, obj);
+
+            }, (idToDelete) => {
+                sendHttpRequest('api/users/delete?id=' + idToDelete, (success, response) => {
+                    if (success && response == 'true') {
+                        loadUsers();
+                    }
+                });
+            });
+        }
+
+        function initRegualrUserData() {
+            loginContainer.style.display = "none";
+            divSU.style.display = "none";
+            container1.style.display = "none";
+            container5.style.display = "block";
+            container5.style.width = "1281px";
+            divSearch.style.display = "block";
+            divSUHelp.style.display = "block"
+            divHelpUC.style.display = "none"
+
+            checkUserresult = true;
+            // האם יש פה כפילות קוד?
+            view = new EditView(divSUHelp, productsColumns, (obj, isEdit) => {
+                sendHttpRequest('api/products/' + (isEdit ? 'update' : 'insert'), (success, response) => {
+                    if (response == 'true') {
+                        loadProducts();
+                    }
+                }, obj);
+
+            }, (idToDelete) => {
+                sendHttpRequest('api/products/delete?id=' + idToDelete, (success, response) => {
+                    if (success && response == 'true') {
+                        loadProducts();
+                    }
+                });
+            });
+        }
+
+
+      
+
+       
+
+
+
+    </script>
+</head>
+<body onload="init()">
+
+    <div id="divSU"></div>
+    <div id="divSearch">
+        <label>Search a Book:</label>
+        <input type="text" id="searchbook" onfocus="this.value=''">
+        <button id="btnsearch" onclick="loadBooksToFind()">Search</button>
+
+        <div id="divHelpUC">
+            <button id="btnUserControl" onclick="showHidec2c5(container2, container5)">User Control</button>
+        </div>
+
+
+
+    </div>
+    <center>
+
+
+
+        <div id="BtnContainer">
+        </div>
+
+
+        <div id="container1" style="visibility: visible">
+            <div id="shelftabletest"></div>
+            <div id="divCount"><p id="SC"></p></div>
+            <img src='AR.jpg' id="moveright" onclick="addShelf()" />
+            <img src='AL.jpg' id="moveleft" onclick="removeShelf()" />
+
+        </div>
+
+        <div id="container5" style="visibility: visible">
+
+            <h2>My Library Books</h2>
+            <div id="divSUHelp"></div>
+
+            <div id="divContainer">
+                <p>
+                    <label>category:</label><select id="ddCategory" onchange="loadProducts()"></select>
+                </p>
+                <div id="divProducts"></div>
+
+            </div>
+        </div>
+
+        <div id="container2" style="visibility:hidden">
+            <img src='close.png' id="closeButton2" onclick="showHidec2c5(container2, container5)" class="CloseBtnClass">
+            <h2>My Users</h2>
+            <div id="divUsers"></div>
+
+        </div>
+
+        <div id="container3" style="visibility:hidden">
+            <img src='close.png' id="closeButton3" onclick="showHidec2c3c5(container2, container3, container5, container4)" class="CloseBtnClass">
+
+            <h2>My Suppliers</h2>
+            <div id="divSuppliers"></div>
+
+        </div>
+
+
+
+        <div id="container4" style="visibility:hidden">
+            <img src='close.png' id="closeButton4" onclick="showHidec2c4c5(container2, container4, container5, container3)" class="CloseBtnClass">
+            <h2>My Categories</h2>
+            <div id="divCategories"></div>
+
+        </div>
+
+
+
+
+        <div id="loginContainer" onkeydown="LoginContainerEnterDown(event)" style="display:block">
+            <p>
+                <label>Username</label>
+                <input id="usernameInput" type="text" onfocus="this.value=''" />
+            </p>
+            <p>
+                <label>Password</label>
+                <input id="passwordInput" type="password" onfocus="this.value=''" />
+            </p>
+            <p>
+                <button id="suBtn">Login</button>
+                <button id="loginBtn" onclick="Login()">Login</button>
+            </p>
+        </div>
+
+
+
+
+
+
+
+    </center>
+
+</body>
+</html>
